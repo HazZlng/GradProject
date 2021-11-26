@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hongik.attendance.mapper.AttendanceMapper">
+
+    <insert id="insertAttendantInfo">
+        insert into atend_info (
+              seq_nb
+            , atend_date
+            , atend_yn
+            , stdn_nb
+            , subjct_code
+        )
+        values (
+              (select coalesce (max(seq_nb ), 0) + 1 from atend_info)
+              , now()
+              , #{atendyn}
+              , #{stdnNb}
+              , #{subjctCode}
+              )
+    </insert>
+
+    <select id="getTime" resultType="string">
+        select now()
+    </select>
+
+    <select id = "selectAttendantInfo" resultType="com.hongik.common.CustomMap">
+    select a.stdn_nb, b.*, coalesce ((select MAX(atend_yn) from atend_info
+    			where stdn_nb = a.stdn_nb and subjct_code = b.subjct_code), 'N') as atend_yn
+             from stdn_tt_info a, lctre_info b
+             where a.subjct_code = b.subjct_code
+             and a.stdn_nb = #{stdnNb}
+    </select>
+</mapper>

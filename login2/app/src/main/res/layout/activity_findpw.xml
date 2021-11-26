@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Student Code"
+        android:id="@+id/studentCode"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="50dp" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editStudentCode_F"
+        android:ems="10"
+        android:layout_toRightOf="@+id/studentCode"
+        android:layout_alignBaseline="@+id/studentCode"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:text="E-Mail"
+        android:layout_below="@+id/studentCode"
+        android:layout_alignRight="@+id/studentCode"
+        android:layout_marginTop="15dp"/>
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editEmail_F"
+        android:ems="10"
+        android:layout_toRightOf="@+id/email"
+        android:layout_alignBaseline="@+id/email"
+        android:layout_marginLeft="10dp"/>
+
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/address"-->
+<!--        android:text=" @ "-->
+<!--        android:layout_toRightOf="@+id/email_ID"-->
+<!--        android:layout_alignBaseline="@+id/email_ID" />-->
+<!--    <EditText-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:id="@+id/email_Address"-->
+<!--        android:ems="5"-->
+<!--        android:layout_toRightOf="@+id/address"-->
+<!--        android:layout_alignBaseline="@+id/address"-->
+<!--        android:layout_alignRight="@+id/editMajor"/>-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/save"
+        android:text="Submit"
+        android:layout_below="@+id/email"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="100dp"
+        android:onClick="findPWSubmit"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cancel"
+        android:text="Cancel"
+        android:layout_toRightOf="@+id/save"
+        android:layout_alignBaseline="@+id/save"
+        android:layout_marginLeft="30dp"
+        android:onClick="findPWCancel"/>
+
+</RelativeLayout>

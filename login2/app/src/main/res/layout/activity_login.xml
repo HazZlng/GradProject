@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editID"
+        android:hint="학번"
+        android:layout_marginTop="130dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/editPW"
+        android:layout_alignStart="@+id/editPW"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/editPW"
+        android:layout_below="@+id/editID"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="41dp"
+        android:layout_marginStart="41dp"
+        android:hint="비밀번호" />
+
+    <Button
+        android:text="로그인"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_toRightOf="@+id/editID"
+        android:layout_marginLeft="20dp"
+        android:layout_alignBottom="@+id/editPW"
+        android:layout_alignTop="@+id/editID"
+        android:onClick="on1" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/signInText"
+        android:text="회원가입"
+        android:layout_alignLeft="@+id/editPW"
+        android:layout_below="@+id/editPW"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="80dp"
+        android:onClick="signIn"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 찾기"
+        android:layout_alignBaseline="@+id/signInText"
+        android:layout_toRightOf="@+id/signInText"
+        android:layout_marginLeft="15dp"
+        android:onClick="findPW"/>
+
+</RelativeLayout>

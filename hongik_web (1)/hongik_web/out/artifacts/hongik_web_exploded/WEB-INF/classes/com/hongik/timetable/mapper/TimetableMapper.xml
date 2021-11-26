@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hongik.timetable.mapper.TimetableMapper">
+
+    <select id="selectLctreList" resultType="com.hongik.common.CustomMap">
+        SELECT subjct_code, estbl_semstr, subjct_nm, credit, lctre_time, estbl_major
+             , lctre_room, creat_dttm, crtr_id, update_dttm, updr_id
+             , (select count(*) from stdn_tt_info where subjct_code=a.subjct_code and stdn_nb=#{stdnNb}) as check_cnt
+          FROM lctre_info a
+         where estbl_semstr = #{estblSemstr}
+           and estbl_major = #{estblMajor}
+         order by subjct_nm
+    </select>
+
+    <select id="selectLctreListBySubjctCode" resultType="com.hongik.common.CustomMap">
+        select * from lctre_info
+         where subjct_code = #{subjctCode}
+    </select>
+
+    <select id="selectLctreEstblSemstr" resultType="com.hongik.common.CustomMap">
+        select estbl_semstr from lctre_info
+         group by estbl_semstr
+         order by estbl_semstr
+    </select>
+
+    <select id="selectLctreEstblMajor" resultType="com.hongik.common.CustomMap">
+        select estbl_major from lctre_info
+         where estbl_semstr = #{estbl_semstr}
+         group by estbl_major
+         order by estbl_major
+    </select>
+
+
+
+</mapper>

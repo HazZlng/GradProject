@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hongik.login.mapper.LoginMapper">
+
+    <select id="selectStdnInfo" resultType="com.hongik.common.CustomMap">
+        select * from stdn_info
+         where stdn_nb = #{stdn_nb}
+    </select>
+
+    <select id="getTime" resultType="string">
+        select now()
+    </select>
+
+    <insert id="insertStdnInfo">
+        insert into stdn_info (
+            stdn_nb
+            ,stdn_pswd
+            ,stdn_nm
+            ,stdn_major
+            ,stdn_email
+            ,creat_dttm
+            ,crtr_id
+            ,update_dttm
+            ,updr_id
+        ) values (
+            #{stdnNb}
+            ,#{stdnPswd}
+            ,#{stdnNm}
+            ,#{stdnMajor}
+            ,#{stdnEmail}
+            ,now()
+            ,#{crtrId}
+            ,now()
+            ,#{updrId}
+        )
+    </insert>
+
+</mapper>

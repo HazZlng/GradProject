@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <CheckBox
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="강의명"
+        android:layout_gravity="center"
+        android:padding="10dp"
+        android:id="@+id/subjectNM"
+        android:background="@color/design_default_color_primary"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        > </CheckBox>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_primary_dark">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="학점"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:layout_marginLeft="8dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:id="@+id/lctreCredit"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="강의시간"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:layout_marginLeft="8dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:id="@+id/lctreTime"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="강의실"
+            android:layout_gravity="center"
+            android:padding="3dp"
+            android:textColor="#ffffff"
+            android:textColorHint="#ffffff"
+            android:id="@+id/lctreRoom"/>
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hongik.stdnttinfo.mapper.StdnttinfoMapper">
+
+    <select id="selectStdnttInfo" resultType="com.hongik.common.CustomMap">
+        select a.stdn_nb, b.*
+         from stdn_tt_info a, lctre_info b
+         where a.subjct_code = b.subjct_code
+         and a.stdn_nb = #{stdnNb}
+    </select>
+
+    <select id="selectStdnCreditInfo" resultType="int">
+    select coalesce (sum(to_number(b.credit, '999')), 0) as credit
+        from stdn_tt_info a, lctre_info b
+        where a.subjct_code = b.subjct_code
+        and a.stdn_nb = #{stdnNb}
+
+    </select>
+
+    <select id="selectDate" resultType="string">
+        select TO_CHAR(now(), 'YYYY년 MM월 DD일') || ' ' ||
+       case TO_CHAR(NOW(), 'D')
+          when '1' then '일'
+          when '2' then '월'
+          when '3' then '화'
+          when '4' then '수'
+          when '5' then '목'
+          when '6' then '금'
+          when '7' then '토'
+        end || '요일'
+    </select>
+
+    <select id="getTime" resultType="string">
+        select now()
+    </select>
+
+    <insert id="insertStdnttInfo">
+        insert into stdn_tt_info (
+            stdn_nb,
+            subjct_code,
+            creat_dttm,
+            crtr_id,
+            update_dttm,
+            updr_id
+        ) values (
+            #{stdnNb},
+            #{subjctCode},
+            now(),
+            #{crtr_id},
+            now(),
+            #{updr_id}
+        )
+    </insert>
+
+    <delete id="deleteStdnttInfo">
+        delete from stdn_tt_info
+         where stdn_nb = #{stdnNb}
+           and subjct_code = #{subjctCode}
+    </delete>
+
+
+</mapper>

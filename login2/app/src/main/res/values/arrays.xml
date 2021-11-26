@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="major">
+        <item>전공공통</item>
+        <item>재료공학과</item>
+        <item>조선해양공학과</item>
+        <item>기계정보공학과</item>
+        <item>전자전기융합공학과</item>
+        <item>소프트웨어융합학과</item>
+        <item>건축공학부</item>
+        <item>바이오화학공학과</item>
+        <item>상경학부</item>
+        <item>디자인컨버전스학부</item>
+        <item>영상-애니메이션학부</item>
+        <item>광고홍보학부</item>
+        <item>산업스포츠학과</item>
+        <item>게임학부</item>
+        <item>환경조성디자인전공</item>
+        <item>자동차부품디자인전공</item>
+        <item>빅데이터비즈니스전공</item>
+        <item>자동차기술융합디자인전공</item>
+    </string-array>
+
+    <string-array name="year">
+        <item>2016년도</item>
+        <item>2017년도</item>
+        <item>2018년도</item>
+        <item>2019년도</item>
+        <item>2020년도</item>
+        <item>2021년도</item>
+    </string-array>
+
+    <string-array name="term">
+        <item>1학기</item>
+        <item>여름학기</item>
+        <item>2학기</item>
+        <item>겨울학기</item>
+    </string-array>
+
+    <string-array name="graduateArea">
+        <item>공통</item>
+        <item>선수</item>
+        <item>전공</item>
+    </string-array>
+
+    <string-array name="universityArea">
+        <item>교양및기타</item>
+        <item>전공</item>
+    </string-array>
+</resources>
